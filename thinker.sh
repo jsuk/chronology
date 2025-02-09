@@ -1,0 +1,2 @@
+cat <(echo "@startuml") <(echo "scale 100 as 100 pixels") <(cat thinker.csv | sed -r -e 's/,[\. c]+?([0-9]+) BCE/,\-\1/g' -e 's/,([0-9]+) CE/,\1/g' | sort -k2 -n -t, | awk -F, '{ a = gensub("[ ()]", "", "g", $1); print "concise \""$1"\" as "a"\n@"a"\n"$2" is "a"\n"$3" is {hidden}"  }') <(echo "@enduml") | sed -r -e 's/^[\. c]+?([0-9]+) BCE/\-\1/g' -e 's/^([0-9]+) CE/\1/g' |  grep -v -e Birth -e resent -e Name -e Birth -e Death | tee thinker.puml | plantuml -p > thinker.svg
+termux-open thinker.svg
