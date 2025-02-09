@@ -1,0 +1,3 @@
+highlight -900 to -300 #Gold;line:DimGrey : Axial Age
+highlight 1301 to 1700 #Green;line:DimGrey : Renaissance
+highlight 1685 to 1815 #FFD70088;line:DimGrey : Enlightenment
